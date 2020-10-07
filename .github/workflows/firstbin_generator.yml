@@ -6,6 +6,11 @@ on:
     paths: 
       - '*.dummy'
 jobs:
+  clone:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'git clone https://github.com/WiiLink24/wiinomatool.git'
+  
   install_openssl:
     runs-on: ubuntu-latest
     steps:
