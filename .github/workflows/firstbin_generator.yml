@@ -20,7 +20,7 @@ jobs:
     steps:
       - run: 'ls'
         
-      - run: 'python3 githubactionsrunme.py'
+      - run: 'python3 wiinomatool/githubactionsrunme.py'
       - run: | 
           echo "Test push commit to the remote in the workflow" >> test.txt
 
