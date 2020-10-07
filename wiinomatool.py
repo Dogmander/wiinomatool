@@ -1,5 +1,4 @@
 print("Wii no Ma Tool 0.5 Beta")
-from tkinter import *
 import datetime
 import os
 def generate_events(info):
@@ -114,6 +113,7 @@ def gen():
     info.gen_firstbin()
         
 if __name__ == '__main__':
+    from tkinter import *
     root = Tk()
     root.title('Wii no Ma Tool')
     wip = Label(root,text='Wii no Ma tool is WIP! Here is a list of WIP functions')
