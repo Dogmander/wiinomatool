@@ -1,4 +1,4 @@
-print("Wii no Ma Tool 0.2 Alpha")
+print("Wii no Ma Tool 0.21 Alpha")
 from tkinter import *
 import datetime
 import os
@@ -31,23 +31,23 @@ class FirstBinTemplate:
         self.url2 = url2
         self.url3 = url3
         self.firstbin = '''
-        <Config>
-          <ver>{}</ver>
-          <maint>0</maint>
-          <url1>{}</url1>
-          <url2>{}</url2>
-          <url3>{}</url3>
-          <eulaver>{}</eulaver>
-          <shopurl>http://66.61.72.125/shopurl/index.esf</shopurl>
-          <shopkey>7fce738e542f0a60fe5d8d8e1e8781af</shopkey>
-          <shopvalid>1</shopvalid>
-          <akahost>5</akahost>
-          <akaca>1</akaca>
-          <smpkey>5ab362aa57dbb1dc16849e3e2d1cf2ff</smpkey>
-          <fmax>30</fmax>
-          <bmax>10</bmax>
-          <upddt>{}</upddt>
-        </Config>
+<Config>
+  <ver>{}</ver>
+  <maint>0</maint>
+  <url1>{}</url1>
+  <url2>{}</url2>
+  <url3>{}</url3>
+  <eulaver>{}</eulaver>
+  <shopurl>http://66.61.72.125/shopurl/index.esf</shopurl>
+  <shopkey>7fce738e542f0a60fe5d8d8e1e8781af</shopkey>
+  <shopvalid>1</shopvalid>
+  <akahost>5</akahost>
+  <akaca>1</akaca>
+  <smpkey>5ab362aa57dbb1dc16849e3e2d1cf2ff</smpkey>
+  <fmax>30</fmax>
+  <bmax>10</bmax>
+  <upddt>{}</upddt>
+</Config>
         '''
 
 
@@ -91,3 +91,4 @@ wip.pack()
 wipconfig.pack()
 wiptoday.pack()
 gen.pack()
+
