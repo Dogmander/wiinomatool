@@ -1,4 +1,4 @@
-print("Wii no Ma Tool 0.21 Alpha")
+print("Wii no Ma Tool 0.5 Beta")
 from tkinter import *
 import datetime
 import os
@@ -23,9 +23,10 @@ class FirstBinTemplate:
     url2 (str): See first.txt
     url3 (str): See first.txt
     '''
-    def __init__(self,ver,eula=3,url1='http://66.61.72.125/url1/',url2='http://66.61.72.125/url2/',url3='http://66.61.72.125/url3/'):
+    def __init__(self,ver=399,eula=3,url1='http://66.61.72.125/url1/',url2='http://66.61.72.125/url2/',url3='http://66.61.72.125/url3/'):
         
         self.ver = ver
+        print(self.ver)
         self.eula = eula
         self.url1 = url1
         self.url2 = url2
@@ -63,7 +64,7 @@ class FirstBinTemplate:
         gen_firstbin -> None
         Creates a first.bin in the current directory
         '''
-        
+        print(self.ver)
         fornoma = '%Y-%d-%mT%H:%M:%S'
         time = datetime.datetime.now().strftime(fornoma)
         firsttxt = open('first.txt',mode='w')
@@ -79,16 +80,68 @@ class FirstBinTemplate:
         firsttxt.close()
         os.system('openssl aes-128-cbc -e -in first.txt -out first.bin -K 943B13DD87468BA5D9B7A8B899F91803 -iv 66B33FC1373FE506EC2B59FB6B977C82')
         
-fbin = FirstBinTemplate(399,3)
-
+def gen():
+    #ver = verent.get()
+    url1 = url1ent.get()
+    url2 = url2ent.get()
+    url3 = url3ent.get()
+    eula = eulaent.get()
+    #print(ver)
+    passver = True
+    passurl1 = True
+    passurl2 = True
+    passurl3 = True
+    passeula = True
+    if url1 == '':
+        passurl1 = False
+    if url2 == '':
+        passurl2 = False
+    if url3 == '':
+        passurl3 = False
+    if eula == '':
+        passeula = False
+    args = {}
+    if passurl1:
+        args['url1'] = url1
+    if passurl2:
+        args['url2'] = url2
+    if passurl3:
+        args['url3'] = url3
+    if passeula:
+        args['eula'] = eula
+    #print(args['ver'])
+    info = FirstBinTemplate(*args)
+    info.gen_firstbin()
+        
+    
 root = Tk()
 root.title('Wii no Ma Tool')
 wip = Label(root,text='Wii no Ma tool is WIP! Here is a list of WIP functions')
-wipconfig = Label(root,text='Configuring first.bin (This will be finished very quickly)')
+#wipconfig = Label(root,text='Configuring first.bin (This will be finished very quickly)')
 wiptoday = Label(root,text='Generating today.bin')
-gen = Button(root,text='Create first.bin',command=fbin.gen_firstbin)
+#verl = Label(root,text='Version')
+url1l = Label(root,text='URL 1')
+url2l = Label(root,text='URL 2')
+url3l = Label(root,text='URL 3')
+eulal = Label(root,text='EULA Version')
+#verent = Entry()
+url1ent = Entry()
+url2ent = Entry()
+url3ent = Entry()
+eulaent = Entry()
+gen = Button(root,text='Create first.bin',command=gen)
 wip.pack()
-wipconfig.pack()
+#wipconfig.pack()
 wiptoday.pack()
+#verl.pack()
+#verent.pack()
+url1l.pack()
+url1ent.pack()
+url2l.pack()
+url2ent.pack()
+url3l.pack()
+url3ent.pack()
+eulal.pack()
+eulaent.pack()
 gen.pack()
 
