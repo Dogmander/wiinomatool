@@ -1,0 +1,12 @@
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/15 * * * *'
+jobs:
+  install_openssl:
+    runs-on: ubuntu-latest
+    steps:
+      - apt-get install openssl
+  create_firstbin:
+    steps:
+      - python3 githubactionsrunme.py
